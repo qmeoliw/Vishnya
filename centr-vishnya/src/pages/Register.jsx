@@ -1,0 +1,17 @@
+import { Link } from "react-router-dom";
+
+export default function Register() {
+  return (
+    <div className="mx-auto max-w-md px-5 py-20">
+      <h1 className="font-display text-4xl">Регистрация</h1>
+      <p className="mt-3 text-sm text-[#6b6162]">Пока это визуальная форма. Подключение к БД будет сделано после проверки существующей базы.</p>
+      <form className="mt-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
+        <input className="w-full rounded-xl border border-[#e8d7d5] bg-white px-4 py-3 text-sm" placeholder="Имя"/>
+        <input className="w-full rounded-xl border border-[#e8d7d5] bg-white px-4 py-3 text-sm" placeholder="Email" type="email"/>
+        <input className="w-full rounded-xl border border-[#e8d7d5] bg-white px-4 py-3 text-sm" placeholder="Пароль" type="password"/>
+        <button className="w-full rounded-full bg-[#bd1644] py-3 text-sm text-white">Создать аккаунт</button>
+      </form>
+      <p className="mt-5 text-xs text-[#6b6162]">Уже есть аккаунт? <Link className="text-[#bd1644]" to="/login">Войти</Link></p>
+    </div>
+  );
+}
