@@ -12,25 +12,28 @@ import Button from "../components/Button";
 import SectionHeading from "../components/SectionHeading";
 import CherryIllustration from "../components/CherryIllustration";
 import { services } from "../data/services";
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+
 
 const specialists = [
   {
     role: "Психолог",
     name: "Куляева Нина",
     desc: "Психолог, педагог-психолог, клинический психолог, аналитический психолог, психолог диагност",
-    photo: "bg-[#e6d7d0]",
+    photo: img1,
   },
   {
     role: "Нейропсихолог",
     name: "Шаройко Полина",
     desc: "Клинический психолог, нейропсихолог",
-    photo: "bg-[#c7c1bc]",
+    photo: img2,
   },
   {
     role: "Нейропсихолог",
     name: "Мозжухина Ольга",
     desc: "Психолог, клинический психолог, нейропсихолог",
-    photo: "bg-[#d9d4ce]",
+    photo: "/images/placeholder.jpg",
   },
 ];
 
@@ -185,7 +188,13 @@ export default function Home() {
                   key={person.name}
                   className="flex min-h-[155px] overflow-hidden rounded-2xl bg-[#fff2f0]"
                 >
-                  <div className={`w-[38%] ${person.photo}`} />
+                  <div className="w-[38%]">
+                    <img
+                      src={person.photo}
+                      alt={person.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                   <div className="p-5">
                     <div className="text-[9px] text-[#756a6b]">
                       {person.role}

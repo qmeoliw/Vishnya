@@ -1,10 +1,12 @@
 import { Heart, ShieldCheck, Route, Users } from "lucide-react";
 import Button from "../components/Button";
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
 
 const team = [
-  ["Психолог", "Куляева Нина", "Психолог, педагог-психолог, клинический психолог, аналитический психолог, психолог диагност"],
-  ["Нейропсихолог", "Шаройко Полина", "Клинический психолог, нейропсихолог"],
-  ["Нейропсихолог", "Мозжухина Ольга", "Психолог, клинический психолог, нейропсихолог"],
+  ["Психолог", "Куляева Нина", "Психолог, педагог-психолог, клинический психолог, аналитический психолог, психолог диагност", img1,],
+  ["Нейропсихолог", "Шаройко Полина", "Клинический психолог, нейропсихолог", img2,],
+  ["Нейропсихолог", "Мозжухина Ольга", "Психолог, клинический психолог, нейропсихолог", null,],
 ];
 
 export default function About() {
@@ -35,16 +37,26 @@ export default function About() {
       <section className="mt-20" id="team">
         <h2 className="font-display text-4xl">Наши специалисты</h2>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {team.map(([role, name, desc]) => (
-            <article key={name} className="overflow-hidden rounded-2xl bg-[#fff2f0]">
-              <div className="h-64 bg-[#ded5cf]" />
-              <div className="p-6">
-                <div className="text-[10px] text-[#756a6b]">{role}</div>
-                <h3 className="mt-2 font-display text-2xl">{name}</h3>
-                <p className="mt-4 text-xs leading-5 text-[#746a6b]">{desc}</p>
-              </div>
-            </article>
-          ))}
+{team.map(([role, name, desc, photo]) => (
+  <article
+    key={name}
+    className="overflow-hidden rounded-2xl bg-[#fff2f0]"
+  >
+    <div className="h-64 overflow-hidden">
+      <img
+        src={photo}
+        alt={name}
+        className="h-full w-full object-cover"
+      />
+    </div>
+
+    <div className="p-6">
+      <div className="text-[10px] text-[#756a6b]">{role}</div>
+      <h3 className="mt-2 font-display text-2xl">{name}</h3>
+      <p className="mt-4 text-xs leading-5 text-[#746a6b]">{desc}</p>
+    </div>
+  </article>
+))}
         </div>
       </section>
     </div>
